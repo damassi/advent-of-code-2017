@@ -1,0 +1,30 @@
+{
+  "name": "advent-of-code-2017",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:damassi/advent-of-code-2017.git",
+  "author": "Christopher Pappas <damassi.pappas@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "backpack",
+    "test": "jest --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.53",
+    "@types/ramda": "^0.25.6",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-es2015": "^6.24.1",
+    "backpack-core": "^0.4.3",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^21.2.1",
+    "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "ramda": "^0.25.0"
+  }
+}

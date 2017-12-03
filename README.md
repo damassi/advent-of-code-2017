@@ -1,2 +1,11 @@
 # advent-of-code-2017
-Problems! 
+
+```
+yarn install
+yarn start
+yarn test
+```
+
+Solutions
+
+- [x] Day 1
