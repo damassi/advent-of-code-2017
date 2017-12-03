@@ -9,3 +9,4 @@ yarn test
 Solutions
 
 - [x] Day 1
+- [x] Day 2

@@ -1,28 +1,24 @@
-import { getInput } from './utils/getInput'
+import { getFileInput } from './utils/getInput'
 import {
   add, addIndex, compose, concat, equals, divide, head, ifElse, inc,
-  last, length, map, pipe, reduce, sum, split, trim, tap, unless, when
+  last, length, map, pipe, reduce, sum, split, trim, unless, when
 } from 'ramda'
 
-const input = getInput('day-01.input')
-const introspect = tap(console.log)
-const reduceWithIndex = addIndex(reduce)
-
-export function parseInput (input, offset) {
+export function parseInput (input, divisor = 0) {
   const output = pipe(
     compose(map(Number), split(''), trim),
     unless(
-      () => offset > 0,
+      () => divisor > 0,
       when(
         x => equals(head(x), last(x)),
         x => concat(x, [head(x)])
       )
     ),
-    reduceWithIndex((acc, x, index, list) => {
+    addIndex(reduce)((acc, x, index, list) => {
       return ifElse(
-        () => offset > 0,
+        () => divisor > 0,
           () => {
-            const midpoint = list[add(index, divide(length(list), offset))]
+            const midpoint = list[add(index, divide(length(list), divisor))]
             return ifElse(
               () => equals(x, midpoint),
               () => sum([acc, x, midpoint]),
@@ -43,8 +39,6 @@ export function parseInput (input, offset) {
   return output(input.toString())
 }
 
-// Part I:
-console.log(parseInput(input))
-
-// Part II:
-console.log(parseInput(input, 2))
+const input = getFileInput('day-01.input')
+console.log('Day 1.0:', parseInput(input))
+console.log('Day 1.1:', parseInput(input, 2))
